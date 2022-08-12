@@ -1,38 +1,35 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: rgb(238, 174, 202);
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.form-title {
-  text-shadow: 2px 2px black;
-}
-
-.form-label {
-  text-shadow: 1px 1px black;
-}
-
-.blog-card {
-  background-color: #98a4e6;
-  border-radius: 3px;
-  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  margin: 1rem;
-  width: 300px;
-  position: relative;
+img,
+.navbar-brand {
   cursor: pointer;
 }
 
-.blog-card img {
+.card {
+  width: 15rem;
+  margin: 1rem;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: scale(1.025);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 10px
+}
+
+.card-text {
+  height: 6rem;
+  width: 14rem;
+  overflow: hidden;
+}
+
+.card-img-top,
+.detail-img {
   object-fit: cover;
-  height: 300px;
-  max-width: 100%;
+  height: 12rem;
+  width: 14.9rem;
 }
