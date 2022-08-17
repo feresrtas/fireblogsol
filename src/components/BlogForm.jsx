@@ -1,14 +1,30 @@
+import { useContext } from "react";
+import { AuthContext } from "../contexts/AuthContext";
+
 const BlogForm = ({ blog, setBlog, handleSubmit }) => {
   const handleChange = (e) => {
     e.preventDefault();
     const { id, value } = e.target;
     setBlog({ ...blog, [id]: value });
   };
+  const { currentUser } = useContext(AuthContext);
 
   return (
     <div className="d-flex px-5">
       <form onSubmit={handleSubmit}>
         <h1 className="form-title display-4">Add New Blog</h1>
+        <div className="mb-3">
+          <label className="form-label">Author</label>
+          <input
+            type="text"
+            className="form-control"
+            id="author"
+            placeholder={currentUser.displayName}
+            required
+            value={blog.author}
+            onChange={handleChange}
+          />
+        </div>
         <div className="mb-3">
           <label className="form-label">Title</label>
           <input

@@ -5,8 +5,14 @@ body {
   background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
 }
 
+.navbar {
+  background: rgb(187, 238, 174);
+  background: linear-gradient(0deg, rgba(187, 238, 174, 1) 0%, rgba(148, 187, 233, 1) 100%);
+}
+
 img,
-.navbar-brand {
+.navb,
+.text-decoration-underline {
   cursor: pointer;
 }
 
@@ -29,7 +35,8 @@ img,
 
 .card-img-top,
 .detail-img {
-  object-fit: cover;
+  object-fit: scale-down;
   height: 12rem;
   width: 14.9rem;
+}
 }

@@ -4,8 +4,8 @@ import BlogForm from '../components/BlogForm';
 import { AddBlog } from '../helpers/firebase';
 import { toastSuccessNotify } from '../helpers/toastNotify';
 
-const initialValues = { title: '', imgurl: '', content: '' };
-// bilgi ekleme
+const initialValues = { title: '', imgurl: '', content: '', author: '' };
+
 function NewBlog() {
 
   const [blog, setBlog] = useState(initialValues);

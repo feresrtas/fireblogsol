@@ -8,22 +8,20 @@ import { logOut } from '../helpers/firebase';
 const Navbar = () => {
   const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
-  const navName = currentUser.displayName;
-  // const spl = (navName?.split(" "))[0];
 
   return (
     <div>
       <nav className="navbar navbar-dark bg-primary">
         <div className="container-fluid">
           <img src={Logocw} alt="navlogo" onClick={() => navigate('/')} />
-          <h2 className='text-white' onClick={() => navigate('/')}>
+          <h2 className='text-white navb' onClick={() => navigate('/')}>
             S Blog
           </h2>
 
           <div className="d-flex text-white align-items-center ">
             {currentUser ? (
               <>
-                <DropdownButton id="dropdown-item-button" title={navName}>
+                <DropdownButton id="dropdown-item-button" title={currentUser.displayName}>
                   <Dropdown.Item
                     as="button"
                     onClick={() => navigate('/newblog')}

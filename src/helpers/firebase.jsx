@@ -29,8 +29,8 @@ import {
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,
-  databaseURL: process.env.REACT_APP_databaseURL,
   projectId: process.env.REACT_APP_projectId,
+  databaseURL: process.env.REACT_APP_databaseURL,
   storageBucket: process.env.REACT_APP_storageBucket,
   messagingSenderId: process.env.REACT_APP_messagingSenderId,
   appId: process.env.REACT_APP_appId,
@@ -127,12 +127,13 @@ export const AddBlog = (blog) => {
     title: blog.title,
     imgurl: blog.imgurl,
     content: blog.content,
+    author: blog.author,
   });
 };
 
 export const GetBlog = () => {
   // Get Data
-  const [isLoading, setIsLoading] = useState();
+  const [isLoading, setIsLoading] = useState(false);
   const [blogList, setBlogList] = useState();
   useEffect(() => {
     const data = getDatabase(firebase);
@@ -150,18 +151,17 @@ export const GetBlog = () => {
   }, []);
   return { isLoading, blogList };
 };
-//****Bilgi Silme  */
+
 export const DelBlog = (id) => {
   const data = getDatabase(firebase);
   remove(ref(data, 'blogs/' + id));
   toastSuccessNotify('Deleted Successfully');
 };
-//****Bilgi Düzeltme ****/
+
 export const UpBlog = (blog) => {
   const data = getDatabase(firebase);
   const updates = {};
   updates['blogs/' + blog.id] = blog;
-
   return update(ref(data), updates);
 };
 
